@@ -32,9 +32,9 @@ def builtNode(graph, lines):
 
 
 def createGraph(name, without_attribute_relation):
-    file0 = open('data/sct2_Concept_Snapshot_INT_20230430.txt', 'r')
+    file0 = open('data/sct2_Concept_Snapshot_INT_20250401.txt', 'r')
     Lines0 = file0.readlines()
-    file1 = open('data/sct2_Relationship_Snapshot_INT_20230430.txt', 'r')
+    file1 = open('data/sct2_Relationship_Snapshot_INT_20250401.txt', 'r')
     Lines1 = file1.readlines()
     #file2 = open('data/sct2_RelationshipConcreteValues_Snapshot_INT_20230430.txt', 'r')
     #Lines2 = file2.readlines()
@@ -52,7 +52,7 @@ def createGraph(name, without_attribute_relation):
 if __name__ == '__main__':
     print("--GRAPH BUILDER--")
 
-    createGraph('snomed-20230430_dag_is-a', True)
-    createGraph('snomed-20230430_dag_rel', False)
+    createGraph('snomed-20250401_dag_is-a', True)
+    createGraph('snomed-20250401_dag_rel', False)
 
     print("--FINISH--")

@@ -1,3 +1,5 @@
+Übernommen und modifiziert von https://github.com/skfit-uni-luebeck/semantic-similarity 
+
 ### `GraphBuilder.py`
 
 - Erstellen des Graphen

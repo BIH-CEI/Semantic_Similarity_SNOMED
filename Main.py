@@ -3,7 +3,7 @@ import pickle
 import Measure
 import Worker
 
-root = '138875005'
+root = '138875005' # SNOMED CT root concept (SNOMED CT Concept ID: 138875005)
 
 
 def calculateSimilarity(ontology, measure_name, concept1, concept2):
@@ -35,8 +35,8 @@ def load_graph(file):
 
 
 if __name__ == '__main__':
-    ontology_graph_sim = load_graph('snomed-20230430_dag_is-a.pkl')
-    ontology_graph_rel = load_graph('snomed-20230430_dag_rel.pkl')
+    ontology_graph_sim = load_graph('data/snomed-20250401_dag_is-a.pkl')
+    ontology_graph_rel = load_graph('data/snomed-20250401_dag_rel.pkl')
 
     ontology = {
         "rel": ontology_graph_rel,
@@ -44,9 +44,11 @@ if __name__ == '__main__':
     }
 
     print('--- MAIN ---')
-    print(calculateSimilarity(ontology, 'BatetSanchezValls', '125605004', '284003005'))
-    print(calculateSimilarity(ontology, 'BatetSanchezValls', '125605004', '71388002'))
+    #print(calculateSimilarity(ontology, 'BatetSanchezValls', '125605004', '284003005'))
+    #print(calculateSimilarity(ontology, 'BatetSanchezValls', '125605004', '71388002'))
 
-    print(Worker.length_of_shortest_path(ontology['sim'], root, '125605004', '284003005'))
-    print(Worker.length_of_shortest_path(ontology['sim'], root, '404684003', '125605004'))
+    #print(Worker.length_of_shortest_path(ontology['sim'], root, '125605004', '284003005'))
+    #print(Worker.length_of_shortest_path(ontology['sim'], root, '404684003', '125605004'))
 
+   # print(Worker.length_of_shortest_path(ontology['rel'], root, '363680008', '165197003')) # Radiographic Imaging procedure (procedure) -|> Imaging (procedure) -|> Evaluation procedure (procedure) <|- Diagnostic assessment (procedure) = distance 3 
+    print(Worker.length_of_shortest_path(ontology['rel'], root, '363680008', '58147004')) # Radiographic Imaging procedure (procedure) --> "Clinical (qualifier value)" -> nonsense beispiel mit Wert 9 
