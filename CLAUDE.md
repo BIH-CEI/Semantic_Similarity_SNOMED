@@ -24,9 +24,10 @@ Based on adapted code from https://github.com/skfit-uni-luebeck/semantic-similar
 ### 2. oBDS Mapping Project Structure
 
 **Mapping Process:**
-- 4 independent mappers (Nina, Sophie, Paul, Lotte, Thomas MII Onko)
-- Tools used: SNOMED Browser, Basisdatensatz.de, implementation guides
+- 4 independent mappers (Nina, Sophie, Paul, Lotte)
+- Tools used: SNOMED Browser, Basisdatensatz.de, implementation guides  
 - Focus: Clinical data points relevant to MII Onko (no personal/reporting data)
+- **Data Structure**: 19 modules with 579 total oBDS concepts to map
 
 **Key Data Files (when downloaded):**
 - `oBDS_Module_alle_neu.xlsx`: Final consolidated mapping file
@@ -112,13 +113,60 @@ source("Kripp_Taxonomy_functioncall.R")  # Semantic agreement
 - String-based SNOMED CT IDs
 - Tab-separated RF2 file parsing
 
-**Data Quality Considerations:**
-- ~10 validation errors in concept lists (Excel scientific notation, invalid codes)
-- Missing value handling in Krippendorff: pairwise deletion recommended
-- Distance matrix infinity values cause issues in semantic weighting
+## Data Quality and Processing
+
+### Known Data Quality Issues
+**Excel/Pandas Import Issues:**
+- **Float conversion**: SNOMED IDs converted to floats (e.g., `439401001.0`) due to pandas treating columns with NaN as float64
+- **Scientific notation**: Large concept IDs shown as `9.00000000000465e+17` 
+- **Multi-value cells**: Multiple SNOMED IDs in single cells separated by line breaks
+- **Non-breaking spaces**: Unicode character 160 at start of concept IDs
+- **SNOMED annotations**: Concepts with system codes like `439401001 (SCT)`
+- **Full expressions**: Complete SNOMED expressions like `16633941000119101 | Description |`
+
+### Data Cleaning Pipeline
+1. **Remove workflow comments** from Modul 11 (pilot module contained project notes)
+2. **Convert dash placeholders** (`-`) to missing values  
+3. **Fix pandas float conversion** by removing `.0` endings from valid integers
+4. **Handle multi-value entries** by extracting first concept, logging others for gap analysis
+5. **Manual mapping for scientific notation** (Excel scientific notation cases)
+6. **Fix data entry typos** (e.g., missing first digit in concept IDs)
+7. **Extract concept IDs** from annotations and full expressions
+8. **Clean Unicode whitespace** issues
+
+### Scientific Notation and Typo Corrections
+**Critical Issue**: Excel scientific notation (`9.00000000000465e+17`) cannot be reliably converted using float precision. Manual mapping required:
+
+- `9.00000000000465e+17` → `20558004` (valid at mapping time, inactivated 2024-07-01)
+- `9.00000000000519e+17` → `394617004` (valid at mapping time, inactivated 2024-05-01)  
+- `9.11753521000004e+17` → `444025001` (typo - lost first digit)
+- `44025001` → `444025001` (typo correction - missing first digit)
+
+**Lesson**: Float conversion loses precision for 18-digit numbers. Always use manual mapping for scientific notation in research data.
+
+### Current Data State
+- **579 total oBDS concepts** across 19 modules after cleaning
+- **600 unique SNOMED concepts** used by 4 mappers after corrections
+- **99.2% validation success** against SNOMED CT 2025-02-01 release (595/600 valid)
+- **Missing value patterns** vary significantly by mapper and module
+
+## Scientific Standards Required
+
+### Code Quality Requirements
+- **Reproducible workflows**: Every data transformation documented with exact counts
+- **Proper variable management**: No lost variables or undefined names
+- **Traceable changes**: Complete audit trail of all data modifications
+- **Validated steps**: Each processing step verified before proceeding
+- **Precise documentation**: Scientific language, not vague "fixed errors"
+
+### Research Outputs Required
+1. **Mapper agreement analysis** using Krippendorff's Alpha (standard and semantic)
+2. **Gap analysis** for BfArM submission of missing SNOMED concepts
+3. **Multi-value case analysis** where mappers selected multiple concepts
+4. **Module-specific quality metrics** and agreement patterns
 
 ## Results Summary
 
-**Overall Krippendorff's Alpha**: 0.382 (standard, no placeholders)
-**Module-specific**: Varies significantly across oBDS modules
-**Semantic weighting**: Implementation completed but requires distance matrix validation
+**Current Status**: Data cleaning and validation completed
+**Next Steps**: Krippendorff Alpha calculation and gap analysis
+**Quality Standards**: Must meet rigorous scientific computing standards
