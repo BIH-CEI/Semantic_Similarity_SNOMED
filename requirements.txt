@@ -1,0 +1,17 @@
+# SNOMED CT Semantic Similarity and oBDS Mapping Analysis
+# Python dependencies
+
+# Core data processing
+pandas>=2.0.0
+numpy>=1.24.0
+openpyxl>=3.1.0  # For Excel file handling
+
+# Graph and semantic similarity
+networkx>=3.0
+
+# Inter-rater reliability
+krippendorff>=0.6.0
+
+# Jupyter for notebooks
+jupyter>=1.0.0
+ipykernel>=6.0.0

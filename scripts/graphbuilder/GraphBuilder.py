@@ -32,11 +32,11 @@ def builtNode(graph, lines):
 
 
 def createGraph(name, without_attribute_relation):
-    file0 = open('data/sct2_Concept_Snapshot_INT_20250401.txt', 'r')
+    file0 = open('../../data/raw/SnomedCT_InternationalRF2_PRODUCTION_20250201T120000Z/Snapshot/Terminology/sct2_Concept_Snapshot_INT_20250201.txt', 'r')
     Lines0 = file0.readlines()
-    file1 = open('data/sct2_Relationship_Snapshot_INT_20250401.txt', 'r')
+    file1 = open('../../data/raw/SnomedCT_InternationalRF2_PRODUCTION_20250201T120000Z/Snapshot/Terminology/sct2_Relationship_Snapshot_INT_20250201.txt', 'r')
     Lines1 = file1.readlines()
-    #file2 = open('data/sct2_RelationshipConcreteValues_Snapshot_INT_20230430.txt', 'r')
+    #file2 = open('../../data/raw/SnomedCT_InternationalRF2_PRODUCTION_20250201T120000Z/Snapshot/Terminology/sct2_RelationshipConcreteValues_Snapshot_INT_20250201.txt', 'r')
     #Lines2 = file2.readlines()
 
     graph = nx.DiGraph()
@@ -44,15 +44,17 @@ def createGraph(name, without_attribute_relation):
     graph = builtEdge(graph, Lines1, without_attribute_relation)
     #graph = builtEdge(graph, Lines2, without_attribute_relation)
 
-    with open(name + ".pkl", "wb") as f:
+    output_path = f"../../data/processed/{name}.pkl"
+    with open(output_path, "wb") as f:
         pickle.dump(graph, f)
+    print(f"Graph saved to: {output_path}")
     print(graph)
 
 
 if __name__ == '__main__':
     print("--GRAPH BUILDER--")
 
-    createGraph('snomed-20250401_dag_is-a', True)
-    createGraph('snomed-20250401_dag_rel', False)
+    createGraph('snomed-20250201_dag_is-a', True)
+    createGraph('snomed-20250201_dag_rel', False)
 
     print("--FINISH--")

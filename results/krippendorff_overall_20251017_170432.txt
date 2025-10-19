@@ -1,0 +1,3 @@
+=== Overall Krippendorff's Alpha Results ===
+
+Standard (Nominal): 0.6680

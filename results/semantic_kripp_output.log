@@ -1,0 +1,78 @@
+======================================================================
+Semantic Krippendorff's Alpha Calculation
+======================================================================
+
+=== LOADING MAPPING DATA ===
+File: C:\Users\thde10\code\intsim\Semantic_Similarity_SNOMED\data\processed\obds_mapping_table.csv
+Loaded 549 concepts from 19 modules
+
+=== LOADING DISTANCE MATRIX ===
+File: C:\Users\thde10\code\intsim\Semantic_Similarity_SNOMED\data\raw\oBDS\Krippendorff Alpha\oBDS_distance_matrix.csv
+Matrix size: (592, 592)
+Concepts covered: 592
+
+=== OVERALL SEMANTIC ALPHA ===
+  Total unique concepts: 593
+  Concepts in distance matrix: 587
+  Missing from distance matrix: {'900000000000465024', '911753521000004000', '371932001', '16217541000119100', '900000000000519001', '423740007'}
+  Total coincidences (nmv): 1689.6666666666665
+  Marginal counts (nc): min=0.00, max=69.00
+  Observed disagreement: 7936.3333
+  Expected disagreement: 88421454.0000
+
+Semantic Krippendorff's Alpha: 0.8484
+Coverage in distance matrix: 99.0%
+
+=== PER-MODULE SEMANTIC ALPHA ===
+  Modul 10: alpha=0.0634, coverage=100% (n=16)
+  Modul 11: alpha=0.2409, coverage=100% (n=15)
+  Modul 12: alpha=0.3521, coverage=92% (n=8)
+  Modul 13: alpha=0.9136, coverage=100% (n=92)
+  Modul 14: alpha=0.8846, coverage=100% (n=201)
+  Modul 15: alpha=0.7504, coverage=100% (n=13)
+  Modul 16: alpha=0.7717, coverage=98% (n=41)
+  Modul 17: alpha=0.4321, coverage=100% (n=40)
+  Modul 18: alpha=0.9906, coverage=100% (n=8)
+  Modul 19: alpha=0.9984, coverage=100% (n=22)
+  Modul 20: alpha=0.8091, coverage=100% (n=8)
+  Modul 21: alpha=2.0000, coverage=50% (n=1)
+  Modul 22: alpha=nan, coverage=100% (n=1)
+  Modul 23: alpha=0.7336, coverage=95% (n=13)
+  Modul 24: alpha=0.4781, coverage=100% (n=6)
+  Modul 25: alpha=0.3887, coverage=100% (n=8)
+  Modul 5: alpha=0.6781, coverage=98% (n=27)
+  Modul 6: alpha=0.7683, coverage=93% (n=25)
+  Modul 9: alpha=0.7227, coverage=100% (n=4)
+
+=== COMPARISON WITH STANDARD ALPHA ===
+Loading: krippendorff_by_module_20251014_165734.csv
+
+Module            Standard   Semantic Difference
+--------------------------------------------------
+Modul 10            0.0467     0.0634    +0.0167
+Modul 11            0.3546     0.2409    -0.1137
+Modul 12            0.4042     0.3521    -0.0521
+Modul 13            0.7793     0.9136    +0.1343
+Modul 14            0.6858     0.8846    +0.1989
+Modul 15            0.8163     0.7504    -0.0659
+Modul 16            0.5972     0.7717    +0.1745
+Modul 17            0.5019     0.4321    -0.0698
+Modul 18            0.8649     0.9906    +0.1257
+Modul 19            0.9305     0.9984    +0.0680
+Modul 20            0.9094     0.8091    -0.1004
+Modul 21            0.0000     2.0000    +2.0000
+Modul 22               nan        nan       +nan
+Modul 23            0.5380     0.7336    +0.1956
+Modul 24            0.5882     0.4781    -0.1101
+Modul 25            0.4300     0.3887    -0.0413
+Modul 5             0.6133     0.6781    +0.0647
+Modul 6             0.5137     0.7683    +0.2546
+Modul 9             0.8036     0.7227    -0.0809
+
+[OK] Module results: C:\Users\thde10\code\intsim\Semantic_Similarity_SNOMED\results\semantic_krippendorff_by_module_20251014_182705.csv
+[OK] Overall results: C:\Users\thde10\code\intsim\Semantic_Similarity_SNOMED\results\semantic_krippendorff_overall_20251014_182705.txt
+[OK] Comparison: C:\Users\thde10\code\intsim\Semantic_Similarity_SNOMED\results\alpha_comparison_20251014_182705.csv
+
+======================================================================
+SEMANTIC ANALYSIS COMPLETE
+======================================================================

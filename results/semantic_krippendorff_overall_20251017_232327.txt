@@ -1,0 +1,6 @@
+=== Semantic Krippendorff's Alpha Results ===
+
+Semantic (Taxonomic): 0.8494
+Coverage in distance matrix: 100.0%
+Number of concepts: 549
+Number of coders: 4

@@ -35,8 +35,8 @@ def load_graph(file):
 
 
 if __name__ == '__main__':
-    ontology_graph_sim = load_graph('data/snomed-20250401_dag_is-a.pkl')
-    ontology_graph_rel = load_graph('data/snomed-20250401_dag_rel.pkl')
+    ontology_graph_sim = load_graph('../../data/processed/snomed-20250201_dag_is-a.pkl')
+    ontology_graph_rel = load_graph('../../data/processed/snomed-20250201_dag_rel.pkl')
 
     ontology = {
         "rel": ontology_graph_rel,

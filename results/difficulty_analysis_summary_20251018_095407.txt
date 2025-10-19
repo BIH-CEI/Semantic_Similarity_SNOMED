@@ -1,0 +1,21 @@
+=== Mapping Difficulty Index (MDI) Analysis ===
+
+Formula: MDI = 0.5*disagreement + 0.4*semantic_disagreement + 0.1*diversity
+
+Items analyzed: 480
+Mean MDI: 0.147
+Median MDI: 0.016
+
+Difficulty categories:
+  Easy (high agreement, close concepts): 255 (53.1%)
+  Moderate (some disagreement, related concepts): 120 (25.0%)
+  Difficult (divergent codes, semantic distance): 105 (21.9%)
+
+Gap analysis candidates (MDI >= 0.5): 12
+Ready for implementation (MDI < 0.1): 255
+
+Key findings:
+- Missing values are NOT correlated with difficulty (r=-0.026)
+- Semantic disagreement is strongest indicator (r=0.640 with disagreement)
+- High MDI items should be reviewed for BfArM gap submission
+- Low MDI items are ready for MII-Onko implementation

@@ -1,0 +1,550 @@
+Module,oBDS_Item,completeness,agreement,quality,n_coders,interpretation,n_unique_codes,most_common_code
+Modul 5,Item_0,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,439401001
+Modul 5,Item_1,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,363346000
+Modul 5,Item_2,0.0,,0.0,0,No codes provided,,
+Modul 5,Item_3,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,900000000000465000
+Modul 5,Item_4,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,399687005
+Modul 5,Item_5,0.0,,0.0,0,No codes provided,,
+Modul 5,Item_6,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,432213005
+Modul 5,Item_7,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,373793006
+Modul 5,Item_8,1.0,0.5,0.5,4,Complete but disputed,2.0,58147004
+Modul 5,Item_9,1.0,0.5,0.5,4,Complete but disputed,3.0,373796003
+Modul 5,Item_10,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,363680008
+Modul 5,Item_11,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,423827005
+Modul 5,Item_12,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,363679005
+Modul 5,Item_13,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,16310003
+Modul 5,Item_14,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,122458006
+Modul 5,Item_15,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,373797007
+Modul 5,Item_16,1.0,0.5,0.5,4,Complete but disputed,2.0,702666009
+Modul 5,Item_17,1.0,0.5,0.5,4,Complete but disputed,3.0,373799005
+Modul 5,Item_18,1.0,0.5,0.5,4,Complete but disputed,3.0,373800009
+Modul 5,Item_19,1.0,0.5,0.5,4,Complete but disputed,3.0,371480007
+Modul 5,Item_20,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,7771000
+Modul 5,Item_21,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,24028007
+Modul 5,Item_22,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,51440002
+Modul 5,Item_23,1.0,0.5,0.5,4,Complete but disputed,3.0,255561001
+Modul 5,Item_24,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,261665006
+Modul 5,Item_25,1.0,0.5,0.5,4,Complete but disputed,2.0,396360001
+Modul 5,Item_26,1.0,0.5,0.5,4,Complete but disputed,3.0,275904003
+Modul 6,Item_27,1.0,0.25,0.25,4,Complete but disputed,4.0,714797009
+Modul 6,Item_28,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,439272007
+Modul 6,Item_29,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 6,Item_30,0.0,,0.0,0,No codes provided,,
+Modul 6,Item_31,0.0,,0.0,0,No codes provided,,
+Modul 6,Item_32,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,900000000000465000
+Modul 6,Item_33,1.0,0.25,0.25,4,Complete but disputed,4.0,373372005
+Modul 6,Item_34,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 6,Item_35,1.0,0.5,0.5,4,Complete but disputed,3.0,263933003
+Modul 6,Item_36,1.0,0.5,0.5,4,Complete but disputed,3.0,384812005
+Modul 6,Item_37,1.0,0.5,0.5,4,Complete but disputed,3.0,263843001
+Modul 6,Item_38,1.0,0.5,0.5,4,Complete but disputed,3.0,263918006
+Modul 6,Item_39,0.75,0.3333333333333333,0.25,3,Low quality,3.0,911753521000004108
+Modul 6,Item_40,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,1155705000
+Modul 6,Item_41,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,1155708003
+Modul 6,Item_42,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,1286893008
+Modul 6,Item_43,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,1155707008
+Modul 6,Item_44,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,1268929003
+Modul 6,Item_45,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,261665006
+Modul 6,Item_46,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,385432009
+Modul 6,Item_47,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,444025001
+Modul 6,Item_48,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,443527007
+Modul 6,Item_49,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,444411008
+Modul 6,Item_50,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,1264491009
+Modul 6,Item_51,1.0,0.5,0.5,4,Complete but disputed,3.0,404684003
+Modul 9,Item_52,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,278201002
+Modul 9,Item_53,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,410671006
+Modul 9,Item_54,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,734841007
+Modul 9,Item_55,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,263486008
+Modul 10,Item_56,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,445200009
+Modul 10,Item_57,1.0,0.25,0.25,4,Complete but disputed,4.0,262061000
+Modul 10,Item_58,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 10,Item_59,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 10,Item_60,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 10,Item_61,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 10,Item_62,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 10,Item_63,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 10,Item_64,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 10,Item_65,1.0,0.5,0.5,4,Complete but disputed,2.0,386053000
+Modul 10,Item_66,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 10,Item_67,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 10,Item_68,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 10,Item_69,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 10,Item_70,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 10,Item_71,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 11,Item_72,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,371497001
+Modul 11,Item_73,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,385421009
+Modul 11,Item_74,1.0,0.5,0.5,4,Complete but disputed,3.0,39607008
+Modul 11,Item_75,1.0,0.5,0.5,4,Complete but disputed,3.0,272673000
+Modul 11,Item_76,1.0,0.5,0.5,4,Complete but disputed,3.0,10200004
+Modul 11,Item_77,1.0,0.5,0.5,4,Complete but disputed,3.0,12738006
+Modul 11,Item_78,1.0,0.5,0.5,4,Complete but disputed,3.0,59441001
+Modul 11,Item_79,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,14016003
+Modul 11,Item_80,1.0,0.5,0.5,4,Complete but disputed,3.0,3120008
+Modul 11,Item_81,1.0,0.5,0.5,4,Complete but disputed,3.0,15425007
+Modul 11,Item_82,1.0,0.25,0.25,4,Complete but disputed,4.0,134315000
+Modul 11,Item_83,1.0,0.5,0.5,4,Complete but disputed,3.0,39937001
+Modul 11,Item_84,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,74964007
+Modul 11,Item_85,1.0,0.5,0.5,4,Complete but disputed,3.0,405843009
+Modul 11,Item_86,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,432213005
+Modul 12,Item_87,1.0,0.25,0.25,4,Complete but disputed,4.0,103319000
+Modul 12,Item_88,0.75,0.3333333333333333,0.25,3,Low quality,3.0,273546003
+Modul 12,Item_89,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,425389002
+Modul 12,Item_90,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,422512005
+Modul 12,Item_91,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,422894000
+Modul 12,Item_92,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,423053003
+Modul 12,Item_93,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,423237006
+Modul 12,Item_94,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,261665006
+Modul 13,Item_95,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,387713003
+Modul 13,Item_96,1.0,0.5,0.5,4,Complete but disputed,3.0,363703001
+Modul 13,Item_97,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,373808002
+Modul 13,Item_98,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,363676003
+Modul 13,Item_99,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,261004008
+Modul 13,Item_100,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,255231005
+Modul 13,Item_101,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,74964007
+Modul 13,Item_102,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,1287211007
+Modul 13,Item_103,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,439272007
+Modul 13,Item_104,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 13,Item_105,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 13,Item_106,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,88797001
+Modul 13,Item_107,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,373067005
+Modul 13,Item_108,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,261665006
+Modul 13,Item_109,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 13,Item_110,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,128477000
+Modul 13,Item_111,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,75100008
+Modul 13,Item_112,1.0,0.5,0.5,4,Complete but disputed,3.0,128477000
+Modul 13,Item_113,1.0,0.5,0.5,4,Complete but disputed,2.0,14669001
+Modul 13,Item_114,1.0,0.5,0.5,4,Complete but disputed,3.0,8635005
+Modul 13,Item_115,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,419076005
+Modul 13,Item_116,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,735173007
+Modul 13,Item_117,0.5,0.5,0.25,2,Low quality,2.0,236085004
+Modul 13,Item_118,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,230690007
+Modul 13,Item_119,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,53206008
+Modul 13,Item_120,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,37372002
+Modul 13,Item_121,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 13,Item_122,0.0,,0.0,0,No codes provided,,
+Modul 13,Item_123,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,82403002
+Modul 13,Item_124,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,236085004
+Modul 13,Item_125,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,81060008
+Modul 13,Item_126,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,67406007
+Modul 13,Item_127,1.0,0.5,0.5,4,Complete but disputed,3.0,772133000
+Modul 13,Item_128,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,1163215007
+Modul 13,Item_129,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,236089005
+Modul 13,Item_130,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,735426009
+Modul 13,Item_131,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,64779008
+Modul 13,Item_132,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,8765009
+Modul 13,Item_133,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,34436003
+Modul 13,Item_134,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,355001
+Modul 13,Item_135,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,57243009
+Modul 13,Item_136,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,95347000
+Modul 13,Item_137,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,84114007
+Modul 13,Item_138,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,698247007
+Modul 13,Item_139,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 13,Item_140,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,2776000
+Modul 13,Item_141,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,14783006
+Modul 13,Item_142,0.75,0.3333333333333333,0.25,3,Low quality,3.0,232413009
+Modul 13,Item_143,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,234044007
+Modul 13,Item_144,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,89138009
+Modul 13,Item_145,0.0,,0.0,0,No codes provided,,
+Modul 13,Item_146,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,19220005
+Modul 13,Item_147,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,91175000
+Modul 13,Item_148,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,26629001
+Modul 13,Item_149,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,59927004
+Modul 13,Item_150,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,19242006
+Modul 13,Item_151,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,234105001
+Modul 13,Item_152,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,234109007
+Modul 13,Item_153,0.5,0.5,0.25,2,Low quality,2.0,386211005
+Modul 13,Item_154,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,46420000
+Modul 13,Item_155,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,373409004
+Modul 13,Item_156,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,243410003
+Modul 13,Item_157,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,22298006
+Modul 13,Item_158,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,308896002
+Modul 13,Item_159,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,308896002
+Modul 13,Item_160,0.0,,0.0,0,No codes provided,,
+Modul 13,Item_161,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,16761005
+Modul 13,Item_162,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,274144001
+Modul 13,Item_163,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,25803005
+Modul 13,Item_164,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,75694006
+Modul 13,Item_165,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,6072007
+Modul 13,Item_166,0.0,,0.0,0,No codes provided,,
+Modul 13,Item_167,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,399957001
+Modul 13,Item_168,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,48661000
+Modul 13,Item_169,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,698817002
+Modul 13,Item_170,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,58554001
+Modul 13,Item_171,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,60046008
+Modul 13,Item_172,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,233604007
+Modul 13,Item_173,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,36118008
+Modul 13,Item_174,1.0,0.5,0.5,4,Complete but disputed,2.0,1162567000
+Modul 13,Item_175,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,59282003
+Modul 13,Item_176,1.0,0.5,0.5,4,Complete but disputed,2.0,1052239007
+Modul 13,Item_177,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,409623005
+Modul 13,Item_178,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,19220005
+Modul 13,Item_179,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,76571007
+Modul 13,Item_180,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,76314005
+Modul 13,Item_181,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,302918009
+Modul 13,Item_182,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,302215000
+Modul 13,Item_183,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,266257000
+Modul 13,Item_184,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,82545002
+Modul 13,Item_185,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,239160006
+Modul 13,Item_186,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,271618001
+Modul 14,Item_187,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,1287742003
+Modul 14,Item_188,1.0,0.25,0.25,4,Complete but disputed,4.0,262202000
+Modul 14,Item_189,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,373808002
+Modul 14,Item_190,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,363676003
+Modul 14,Item_191,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,373808002
+Modul 14,Item_192,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,74964007
+Modul 14,Item_193,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,1287211007
+Modul 14,Item_194,0.0,,0.0,0,No codes provided,,
+Modul 14,Item_195,0.0,,0.0,0,No codes provided,,
+Modul 14,Item_196,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,373846009
+Modul 14,Item_197,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,373847000
+Modul 14,Item_198,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,277671009
+Modul 14,Item_199,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,260364009
+Modul 14,Item_200,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,74964007
+Modul 14,Item_201,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,405813007
+Modul 14,Item_202,0.0,,0.0,0,No codes provided,,
+Modul 14,Item_203,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,21483005
+Modul 14,Item_204,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,258335003
+Modul 14,Item_205,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,119235005
+Modul 14,Item_206,1.0,0.5,0.5,4,Complete but disputed,2.0,389079005
+Modul 14,Item_207,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,56329008
+Modul 14,Item_208,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,74964007
+Modul 14,Item_209,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,774007
+Modul 14,Item_210,1.0,0.5,0.5,4,Complete but disputed,2.0,1290032005
+Modul 14,Item_211,1.0,0.5,0.5,4,Complete but disputed,2.0,1286894002
+Modul 14,Item_212,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,74262004
+Modul 14,Item_213,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,117590005
+Modul 14,Item_214,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,385294005
+Modul 14,Item_215,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,54066008
+Modul 14,Item_216,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,71836000
+Modul 14,Item_217,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,31389004
+Modul 14,Item_218,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,81502006
+Modul 14,Item_219,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,4596009
+Modul 14,Item_220,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,69748006
+Modul 14,Item_221,1.0,0.5,0.5,4,Complete but disputed,2.0,774007
+Modul 14,Item_222,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,51185008
+Modul 14,Item_223,1.0,0.5,0.5,4,Complete but disputed,3.0,181131000
+Modul 14,Item_224,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,119184005
+Modul 14,Item_225,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,78904004
+Modul 14,Item_226,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,39607008
+Modul 14,Item_227,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,32849002
+Modul 14,Item_228,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,72410000
+Modul 14,Item_229,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,9875009
+Modul 14,Item_230,1.0,0.5,0.5,4,Complete but disputed,2.0,51185008
+Modul 14,Item_231,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,818983003
+Modul 14,Item_232,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,69695003
+Modul 14,Item_233,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,15776009
+Modul 14,Item_234,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,10200004
+Modul 14,Item_235,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,78961009
+Modul 14,Item_236,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,64033007
+Modul 14,Item_237,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,23451007
+Modul 14,Item_238,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,82849001
+Modul 14,Item_239,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,87953007
+Modul 14,Item_240,1.0,0.5,0.5,4,Complete but disputed,3.0,822992007
+Modul 14,Item_241,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,80581009
+Modul 14,Item_242,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,28273000
+Modul 14,Item_243,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,28231008
+Modul 14,Item_244,1.0,0.5,0.5,4,Complete but disputed,2.0,818983003
+Modul 14,Item_245,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,826984001
+Modul 14,Item_246,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,34402009
+Modul 14,Item_247,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,53505006
+Modul 14,Item_248,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,89837001
+Modul 14,Item_249,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,41216001
+Modul 14,Item_250,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,40689003
+Modul 14,Item_251,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,18911002
+Modul 14,Item_252,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,35039007
+Modul 14,Item_253,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,71252005
+Modul 14,Item_254,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,45292006
+Modul 14,Item_255,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,76784001
+Modul 14,Item_256,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,3665003
+Modul 14,Item_257,1.0,0.5,0.5,4,Complete but disputed,2.0,826984001
+Modul 14,Item_258,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,113192009
+Modul 14,Item_259,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,89546000
+Modul 14,Item_260,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,31467002
+Modul 14,Item_261,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,363654007
+Modul 14,Item_262,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,84667006
+Modul 14,Item_263,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,35769007
+Modul 14,Item_264,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,73903008
+Modul 14,Item_265,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,54735007
+Modul 14,Item_266,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,113197003
+Modul 14,Item_267,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,56873002
+Modul 14,Item_268,1.0,0.5,0.5,4,Complete but disputed,3.0,896747000
+Modul 14,Item_269,1.0,0.5,0.5,4,Complete but disputed,3.0,85050009
+Modul 14,Item_270,1.0,0.5,0.5,4,Complete but disputed,3.0,299701004
+Modul 14,Item_271,1.0,0.5,0.5,4,Complete but disputed,3.0,24097009
+Modul 14,Item_272,1.0,0.5,0.5,4,Complete but disputed,3.0,118645006
+Modul 14,Item_273,1.0,0.5,0.5,4,Complete but disputed,3.0,28254004
+Modul 14,Item_274,1.0,0.5,0.5,4,Complete but disputed,3.0,71341001
+Modul 14,Item_275,1.0,0.5,0.5,4,Complete but disputed,3.0,702468001
+Modul 14,Item_276,1.0,0.5,0.5,4,Complete but disputed,3.0,84167007
+Modul 14,Item_277,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,74964007
+Modul 14,Item_278,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,87784001
+Modul 14,Item_279,1.0,0.5,0.5,4,Complete but disputed,2.0,774007
+Modul 14,Item_280,1.0,0.5,0.5,4,Complete but disputed,3.0,53120007
+Modul 14,Item_281,1.0,0.5,0.5,4,Complete but disputed,3.0,61685007
+Modul 14,Item_282,1.0,0.5,0.5,4,Complete but disputed,2.0,51185008
+Modul 14,Item_283,1.0,0.5,0.5,4,Complete but disputed,3.0,818997006
+Modul 14,Item_284,1.0,0.5,0.5,4,Complete but disputed,2.0,12921003
+Modul 14,Item_285,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,1490004
+Modul 14,Item_286,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,276825009
+Modul 14,Item_287,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,74964007
+Modul 14,Item_288,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,39937001
+Modul 14,Item_289,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,181469002
+Modul 14,Item_290,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,119181002
+Modul 14,Item_291,1.0,0.5,0.5,4,Complete but disputed,3.0,122490001
+Modul 14,Item_292,1.0,0.5,0.5,4,Complete but disputed,3.0,76838003
+Modul 14,Item_293,1.0,0.5,0.5,4,Complete but disputed,3.0,9659009
+Modul 14,Item_294,1.0,0.5,0.5,4,Complete but disputed,3.0,245269009
+Modul 14,Item_295,1.0,0.5,0.5,4,Complete but disputed,3.0,245282001
+Modul 14,Item_296,1.0,0.5,0.5,4,Complete but disputed,2.0,62683002
+Modul 14,Item_297,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,264016003
+Modul 14,Item_298,1.0,0.5,0.5,4,Complete but disputed,3.0,818991007
+Modul 14,Item_299,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,245285004
+Modul 14,Item_300,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,91394001
+Modul 14,Item_301,1.0,0.5,0.5,4,Complete but disputed,2.0,54268001
+Modul 14,Item_302,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,8928004
+Modul 14,Item_303,0.0,,0.0,0,No codes provided,,
+Modul 14,Item_304,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,397440000
+Modul 14,Item_305,0.0,,0.0,0,No codes provided,,
+Modul 14,Item_306,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,74964007
+Modul 14,Item_307,0.0,,0.0,0,No codes provided,,
+Modul 14,Item_308,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,38266002
+Modul 14,Item_309,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,309795001
+Modul 14,Item_310,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,74964007
+Modul 14,Item_311,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,24028007
+Modul 14,Item_312,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,7771000
+Modul 14,Item_313,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,405813007
+Modul 14,Item_314,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,7771000
+Modul 14,Item_315,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,24028007
+Modul 14,Item_316,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,51440002
+Modul 14,Item_317,1.0,0.5,0.5,4,Complete but disputed,2.0,260528009
+Modul 14,Item_318,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,261665006
+Modul 14,Item_319,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,385432009
+Modul 14,Item_320,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,413946009
+Modul 14,Item_321,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,413947000
+Modul 14,Item_322,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,276213000
+Modul 14,Item_323,1.0,0.5,0.5,4,Complete but disputed,2.0,33195004
+Modul 14,Item_324,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,395096001
+Modul 14,Item_325,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 14,Item_326,0.0,,0.0,0,No codes provided,,
+Modul 14,Item_327,0.0,,0.0,0,No codes provided,,
+Modul 14,Item_328,0.0,,0.0,0,No codes provided,,
+Modul 14,Item_329,0.0,,0.0,0,No codes provided,,
+Modul 14,Item_330,0.0,,0.0,0,No codes provided,,
+Modul 14,Item_331,0.0,,0.0,0,No codes provided,,
+Modul 14,Item_332,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,384692006
+Modul 14,Item_333,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,384692006
+Modul 14,Item_334,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,384692006
+Modul 14,Item_335,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,384692006
+Modul 14,Item_336,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,113120007
+Modul 14,Item_337,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,113120007
+Modul 14,Item_338,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,113120007
+Modul 14,Item_339,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,113120007
+Modul 14,Item_340,0.0,,0.0,0,No codes provided,,
+Modul 14,Item_341,0.0,,0.0,0,No codes provided,,
+Modul 14,Item_342,0.0,,0.0,0,No codes provided,,
+Modul 14,Item_343,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,64291000052106
+Modul 14,Item_344,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,118640001
+Modul 14,Item_345,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,399315003
+Modul 14,Item_346,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,74964007
+Modul 14,Item_347,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,82107009
+Modul 14,Item_348,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,290006006
+Modul 14,Item_349,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,46602004
+Modul 14,Item_350,1.0,0.5,0.5,4,Complete but disputed,3.0,58607005
+Modul 14,Item_351,1.0,0.5,0.5,4,Complete but disputed,3.0,89177007
+Modul 14,Item_352,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,312253001
+Modul 14,Item_353,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,286630003
+Modul 14,Item_354,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,74964007
+Modul 14,Item_355,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,447553000
+Modul 14,Item_356,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,1368003
+Modul 14,Item_357,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,14691008
+Modul 14,Item_358,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,24853006
+Modul 14,Item_359,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,32059002
+Modul 14,Item_360,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,419804008
+Modul 14,Item_361,0.0,,0.0,0,No codes provided,,
+Modul 14,Item_362,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,7770004
+Modul 14,Item_363,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,48341001
+Modul 14,Item_364,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,5405008
+Modul 14,Item_365,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,89457008
+Modul 14,Item_366,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,445461008
+Modul 14,Item_367,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 14,Item_368,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,229028007
+Modul 14,Item_369,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,229029004
+Modul 14,Item_370,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,418931004
+Modul 14,Item_371,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,229034000
+Modul 14,Item_372,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,282143001
+Modul 14,Item_373,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,1287742003
+Modul 14,Item_374,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,445232009
+Modul 14,Item_375,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,445232009
+Modul 14,Item_376,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,445232009
+Modul 14,Item_377,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,445232009
+Modul 14,Item_378,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,373067005
+Modul 14,Item_379,0.5,0.5,0.25,2,Low quality,2.0,262202000
+Modul 14,Item_380,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 14,Item_381,0.0,,0.0,0,No codes provided,,
+Modul 14,Item_382,0.0,,0.0,0,No codes provided,,
+Modul 14,Item_383,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,419835002
+Modul 14,Item_384,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,74964007
+Modul 14,Item_385,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 14,Item_386,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,419099009
+Modul 14,Item_387,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,261665006
+Modul 15,Item_388,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 15,Item_389,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 15,Item_390,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,260413007
+Modul 15,Item_391,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,255604002
+Modul 15,Item_392,1.0,0.5,0.5,4,Complete but disputed,2.0,1255665007
+Modul 15,Item_393,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,24484000
+Modul 15,Item_394,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,442452003
+Modul 15,Item_395,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,399166001
+Modul 15,Item_396,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,261665006
+Modul 15,Item_397,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 15,Item_398,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 15,Item_399,0.0,,0.0,0,No codes provided,,
+Modul 15,Item_400,0.0,,0.0,0,No codes provided,,
+Modul 16,Item_401,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 16,Item_402,0.75,0.3333333333333333,0.25,3,Low quality,3.0,262202000
+Modul 16,Item_403,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,373808002
+Modul 16,Item_404,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,363676003
+Modul 16,Item_405,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,74964007
+Modul 16,Item_406,0.5,0.5,0.25,2,Low quality,2.0,260413007
+Modul 16,Item_407,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 16,Item_408,0.5,0.5,0.25,2,Low quality,2.0,260413007
+Modul 16,Item_409,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,373846009
+Modul 16,Item_410,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,373847000
+Modul 16,Item_411,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,277671009
+Modul 16,Item_412,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,74964007
+Modul 16,Item_413,0.75,0.3333333333333333,0.25,3,Low quality,3.0,276239002
+Modul 16,Item_414,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,367336001
+Modul 16,Item_415,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,169413002
+Modul 16,Item_416,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,76334006
+Modul 16,Item_417,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,448288001
+Modul 16,Item_418,0.5,0.5,0.25,2,Low quality,2.0,367336001
+Modul 16,Item_419,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 16,Item_420,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 16,Item_421,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 16,Item_422,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,1269349006
+Modul 16,Item_423,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,424313000
+Modul 16,Item_424,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,310341009
+Modul 16,Item_425,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,373818007
+Modul 16,Item_426,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,74964007
+Modul 16,Item_427,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,258049002
+Modul 16,Item_428,0.75,0.3333333333333333,0.25,3,Low quality,3.0,394906002
+Modul 16,Item_429,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,105590001
+Modul 16,Item_430,1.0,0.25,0.25,4,Complete but disputed,4.0,410942007
+Modul 16,Item_431,0.75,0.3333333333333333,0.25,3,Low quality,3.0,394908001
+Modul 16,Item_432,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 16,Item_433,0.5,0.5,0.25,2,Low quality,2.0,17854005
+Modul 16,Item_434,0.5,0.5,0.25,2,Low quality,2.0,17854005
+Modul 16,Item_435,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 16,Item_436,0.75,0.3333333333333333,0.25,3,Low quality,3.0,281013003
+Modul 16,Item_437,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,74964007
+Modul 16,Item_438,1.0,0.5,0.5,4,Complete but disputed,3.0,1296859006
+Modul 16,Item_439,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,18632008
+Modul 16,Item_440,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,261665006
+Modul 16,Item_441,0.5,0.5,0.25,2,Low quality,2.0,261782000
+Modul 17,Item_442,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,263502005
+Modul 17,Item_443,0.75,0.3333333333333333,0.25,3,Low quality,3.0,410672004
+Modul 17,Item_444,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 17,Item_445,1.0,0.5,0.5,4,Complete but disputed,2.0,550991000124107
+Modul 17,Item_446,1.0,0.5,0.5,4,Complete but disputed,2.0,551001000124108
+Modul 17,Item_447,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,260388006
+Modul 17,Item_448,1.0,0.5,0.5,4,Complete but disputed,2.0,255314001
+Modul 17,Item_449,0.0,,0.0,0,No codes provided,,
+Modul 17,Item_450,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 17,Item_451,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,550991000124107
+Modul 17,Item_452,1.0,0.5,0.5,4,Complete but disputed,3.0,1259237005
+Modul 17,Item_453,0.5,0.5,0.25,2,Low quality,2.0,385432009
+Modul 17,Item_454,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,1287211007
+Modul 17,Item_455,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,108369006
+Modul 17,Item_456,1.0,0.5,0.5,4,Complete but disputed,2.0,41647002
+Modul 17,Item_457,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,65320000
+Modul 17,Item_458,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,255314001
+Modul 17,Item_459,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,260388006
+Modul 17,Item_460,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,1259237005
+Modul 17,Item_461,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,64957009
+Modul 17,Item_462,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,261665006
+Modul 17,Item_463,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,1287211007
+Modul 17,Item_464,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,399656008
+Modul 17,Item_465,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,41647002
+Modul 17,Item_466,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,263855007
+Modul 17,Item_467,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,65320000
+Modul 17,Item_468,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,255314001
+Modul 17,Item_469,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,260388006
+Modul 17,Item_470,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,64957009
+Modul 17,Item_471,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,261665006
+Modul 17,Item_472,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,1287211007
+Modul 17,Item_473,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,399608002
+Modul 17,Item_474,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,41647002
+Modul 17,Item_475,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,7147002
+Modul 17,Item_476,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,65320000
+Modul 17,Item_477,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,255314001
+Modul 17,Item_478,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,260388006
+Modul 17,Item_479,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,64957009
+Modul 17,Item_480,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,261665006
+Modul 17,Item_481,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,1287211007
+Modul 18,Item_482,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,225292002
+Modul 18,Item_483,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,439272007
+Modul 18,Item_484,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,410657003
+Modul 18,Item_485,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,307153007
+Modul 18,Item_486,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,262061000
+Modul 18,Item_487,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,373846009
+Modul 18,Item_488,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,303110006
+Modul 18,Item_489,0.0,,0.0,0,No codes provided,,
+Modul 19,Item_490,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,304541006
+Modul 19,Item_491,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 19,Item_492,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,367336001
+Modul 19,Item_493,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,169413002
+Modul 19,Item_494,1.0,0.5,0.5,4,Complete but disputed,2.0,897713009
+Modul 19,Item_495,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,448288001
+Modul 19,Item_496,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,1269349006
+Modul 19,Item_497,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,897713009
+Modul 19,Item_498,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,1255831008
+Modul 19,Item_499,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,897713009
+Modul 19,Item_500,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,76334006
+Modul 19,Item_501,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,373818007
+Modul 19,Item_502,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,424313000
+Modul 19,Item_503,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,310341009
+Modul 19,Item_504,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,387713003
+Modul 19,Item_505,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,1287742003
+Modul 19,Item_506,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,74964007
+Modul 19,Item_507,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,897016006
+Modul 19,Item_508,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,445528004
+Modul 19,Item_509,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,373066001
+Modul 19,Item_510,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,373067005
+Modul 19,Item_511,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,261665006
+Modul 20,Item_512,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,419620001
+Modul 20,Item_513,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,399753006
+Modul 20,Item_514,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,184305005
+Modul 20,Item_515,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,373066001
+Modul 20,Item_516,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,373067005
+Modul 20,Item_517,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,261665006
+Modul 20,Item_518,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,184305005
+Modul 20,Item_519,0.5,1.0,0.5,2,Perfect agreement but incomplete,1.0,184305005
+Modul 21,Item_520,1.0,0.25,0.25,4,Complete but disputed,4.0,900000000000519001
+Modul 22,Item_521,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,304292004
+Modul 23,Item_522,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,64195000
+Modul 23,Item_523,1.0,0.25,0.25,4,Complete but disputed,4.0,55446002
+Modul 23,Item_524,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,85460009
+Modul 23,Item_525,0.5,0.5,0.25,2,Low quality,2.0,1222712000
+Modul 23,Item_526,0.75,1.0,0.75,3,Perfect agreement but incomplete,1.0,44225006
+Modul 23,Item_527,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,103165007
+Modul 23,Item_528,0.75,0.3333333333333333,0.25,3,Low quality,3.0,55446002
+Modul 23,Item_529,1.0,0.75,0.75,4,"Excellent (all responded, high agreement)",2.0,55446002
+Modul 23,Item_530,1.0,0.25,0.25,4,Complete but disputed,4.0,260385009
+Modul 23,Item_531,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,50334000
+Modul 23,Item_532,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,74964007
+Modul 23,Item_533,0.75,0.3333333333333333,0.25,3,Low quality,3.0,69910005
+Modul 23,Item_534,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,261665006
+Modul 24,Item_535,0.5,0.5,0.25,2,Low quality,2.0,308364004
+Modul 24,Item_536,0.5,0.5,0.25,2,Low quality,2.0,709491003
+Modul 24,Item_537,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,373066001
+Modul 24,Item_538,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,373067005
+Modul 24,Item_539,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,261665006
+Modul 24,Item_540,0.75,0.3333333333333333,0.25,3,Low quality,3.0,410672004
+Modul 25,Item_541,0.5,0.5,0.25,2,Low quality,2.0,70862002
+Modul 25,Item_542,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,410656007
+Modul 25,Item_543,1.0,0.5,0.5,4,Complete but disputed,3.0,310134006
+Modul 25,Item_544,0.75,0.3333333333333333,0.25,3,Low quality,3.0,409063005
+Modul 25,Item_545,0.25,1.0,0.25,1,Single code (no validation),,
+Modul 25,Item_546,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,373066001
+Modul 25,Item_547,1.0,1.0,1.0,4,Perfect (all 4 agree),1.0,373067005
+Modul 25,Item_548,0.75,0.6666666666666666,0.5,3,Moderate quality,2.0,410671006

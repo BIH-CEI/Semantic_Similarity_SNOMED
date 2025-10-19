@@ -1,0 +1,16 @@
+=== Quality Score Analysis ===
+
+Quality = Completeness × Agreement
+
+Overall Statistics:
+  Mean completeness: 0.798
+  Mean agreement: 0.821
+  Mean quality: 0.646
+
+Strategic Missingness Test:
+  Correlation: 0.026
+  Interpretation: Random missing
+
+Recommendation:
+  Missing values appear random/unrelated to difficulty.
+  Encouraging completeness may improve overall quality.
