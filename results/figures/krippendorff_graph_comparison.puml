@@ -1,0 +1,131 @@
+@startuml Krippendorff Alpha: IS-A vs Full Relations Graph
+
+!theme plain
+skinparam backgroundColor white
+skinparam defaultFontSize 11
+skinparam defaultFontName Arial
+
+' ============================================================================
+' LEFT SIDE: IS-A ONLY GRAPH (Hierarchical)
+' ============================================================================
+
+package "IS-A Only Graph (α = 0.8380)" {
+
+  rectangle "Clinical Finding\n(404684003)" as CF1 #LightBlue
+
+  rectangle "Disease\n(64572001)" as D1 #LightGreen
+
+  rectangle "Neoplasm\n(108369006)" as N1 #LightYellow
+
+  rectangle "Malignant Neoplasm\n(363346000)" as MN1 #Orange
+
+  rectangle "Lung Cancer\n(93880001)" as LC1 #Red
+
+  rectangle "Small Cell Lung Cancer\n(254637007)" as SCLC1 #DarkRed
+
+  CF1 -down-> D1 : **IS-A**
+  D1 -down-> N1 : **IS-A**
+  N1 -down-> MN1 : **IS-A**
+  MN1 -down-> LC1 : **IS-A**
+  LC1 -down-> SCLC1 : **IS-A**
+
+  note right of CF1
+    **Only hierarchical relationships**
+    Relationship type: 116680003 (Is a)
+
+    **Distance = Path length**
+    - Clinical Finding → Disease = 1 hop
+    - Clinical Finding → Neoplasm = 2 hops
+    - Neoplasm → Lung Cancer = 2 hops
+    - Lung Cancer → SCLC = 1 hop
+  end note
+
+  note bottom of SCLC1
+    **Semantic Krippendorff (IS-A):**
+    - Simple tree structure
+    - Distance = shortest path up/down hierarchy
+    - δ(Neoplasm, Lung Cancer) = 2
+    - δ(Lung Cancer, SCLC) = 1
+  end note
+}
+
+' ============================================================================
+' RIGHT SIDE: FULL RELATIONS GRAPH (All relationships)
+' ============================================================================
+
+package "Full Relations Graph (α = 0.8424)" {
+
+  rectangle "Clinical Finding\n(404684003)" as CF2 #LightBlue
+
+  rectangle "Disease\n(64572001)" as D2 #LightGreen
+
+  rectangle "Neoplasm\n(108369006)" as N2 #LightYellow
+
+  rectangle "Malignant Neoplasm\n(363346000)" as MN2 #Orange
+
+  rectangle "Lung Cancer\n(93880001)" as LC2 #Red
+
+  rectangle "Lung Structure\n(39607008)" as LS #Cyan
+
+  rectangle "Malignant Process\n(370837009)" as MP #Pink
+
+  CF2 -down-> D2 : **IS-A**
+  D2 -down-> N2 : **IS-A**
+  N2 -down-> MN2 : **IS-A**
+  MN2 -down-> LC2 : **IS-A**
+
+  LC2 .right.> LS : Finding site
+  LC2 .left.> MP : Associated morphology
+  MN2 .up.> MP : Associated morphology
+
+  note right of CF2
+    **All SNOMED CT relationships**
+    - IS-A (116680003)
+    - Finding site (363698007)
+    - Associated morphology (116676008)
+    - Causative agent (246075003)
+    - Clinical course (263502005)
+    - and 60+ other relationship types
+  end note
+
+  note bottom of LS
+    **Semantic Krippendorff (Full):**
+    - Complex graph with shortcuts
+    - Distance considers ALL relationships
+    - δ(Neoplasm, Lung Cancer) may be < 2
+      (shortcut via morphology)
+    - Captures semantic similarity better
+  end note
+}
+
+' ============================================================================
+' COMPARISON BOX
+' ============================================================================
+
+note as ComparisonNote
+  **Why Full Relations α is higher (0.8424 vs 0.8380)?**
+
+  When mappers choose **related but not identical** concepts:
+
+  **Example:**
+  Mapper A: "Malignant neoplasm of lung" (363358000)
+  Mapper B: "Non-small cell lung cancer" (254632001)
+
+  **IS-A distance:** 4 hops (up to common ancestor, then down)
+  **Full graph distance:** 2 hops (shortcut via "finding site" relationship)
+
+  → Full graph recognizes they're **semantically closer**
+  → Smaller distance = less disagreement penalty
+  → Higher Krippendorff's Alpha
+
+  **Interpretation:**
+  - Standard α (0.7634): Ignores semantics entirely (identical codes only)
+  - IS-A α (0.8380): Considers hierarchical distance
+  - Full α (0.8424): Considers all semantic relationships
+
+  → **Agreement is better than nominal metrics suggest**
+end note
+
+ComparisonNote -[hidden]right- CF2
+
+@enduml

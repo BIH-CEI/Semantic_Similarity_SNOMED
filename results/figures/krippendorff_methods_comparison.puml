@@ -1,0 +1,190 @@
+@startuml Three Krippendorff Alpha Methods
+
+!theme plain
+skinparam backgroundColor white
+skinparam defaultFontSize 11
+skinparam defaultFontName Arial
+
+title Krippendorff's Alpha: Three Methods Compared\noBDS SNOMED Mapping Quality Assessment
+
+' ============================================================================
+' METHOD 1: STANDARD (NOMINAL)
+' ============================================================================
+
+rectangle "Method 1: Standard (Nominal)\nα = 0.7634" #LightCoral {
+
+  card "**Agreement Rule**" as Rule1 #White {
+    label "Codes are either:\n• **IDENTICAL** → δ = 0 (agree)\n• **DIFFERENT** → δ = 1 (disagree)"
+  }
+
+  card "**Example**" as Ex1 #WhiteSmoke {
+    agent "Mapper A: 93880001" as MA1
+    agent "Mapper B: 93880001" as MB1
+    agent "Mapper C: 254637007" as MC1
+    agent "Mapper D: 254637007" as MD1
+
+    MA1 -[hidden]-> MB1
+    MB1 -[hidden]-> MC1
+    MC1 -[hidden]-> MD1
+
+    note bottom
+      δ(A,B) = 0 (identical ✓)
+      δ(A,C) = 1 (different ✗)
+      δ(A,D) = 1 (different ✗)
+      δ(C,D) = 0 (identical ✓)
+
+      **Treats all disagreements equally**
+      No semantic nuance
+    end note
+  }
+
+  card "**Characteristics**" as Char1 #Honeydew {
+    + Simple, widely used
+    + No external data needed
+    - **Overpenalizes** related concepts
+    - Ignores clinical similarity
+    - Lowest alpha (0.76)
+  }
+
+  Rule1 -down-> Ex1
+  Ex1 -down-> Char1
+}
+
+' ============================================================================
+' METHOD 2: SEMANTIC IS-A ONLY
+' ============================================================================
+
+rectangle "Method 2: Semantic (IS-A Only)\nα = 0.8380" #LightYellow {
+
+  card "**Agreement Rule**" as Rule2 #White {
+    label "Distance = Shortest path\nusing **IS-A relationships only**\n\nδ(A,B) = hops / 50\n(normalized by SNOMED max depth)"
+  }
+
+  card "**Example**" as Ex2 #WhiteSmoke {
+    agent "Mapper A: Lung Cancer\n(93880001)" as MA2
+    agent "Mapper B: Lung Cancer\n(93880001)" as MB2
+    agent "Mapper C: Small Cell LC\n(254637007)" as MC2
+    agent "Mapper D: Small Cell LC\n(254637007)" as MD2
+
+    database "IS-A Graph" as Graph2 {
+      rectangle "Lung Cancer" as LC2
+      rectangle "Small Cell LC" as SCLC2
+      LC2 -down-> SCLC2 : IS-A (1 hop)
+    }
+
+    MA2 -[hidden]-> MB2
+    MB2 -[hidden]-> MC2
+    MC2 -[hidden]-> MD2
+
+    note bottom
+      δ(A,B) = 0/50 = 0.00 (identical)
+      δ(A,C) = 1/50 = **0.02** (close!)
+      δ(A,D) = 1/50 = **0.02** (close!)
+      δ(C,D) = 0/50 = 0.00 (identical)
+
+      **Recognizes hierarchical similarity**
+      Parent-child = small penalty
+    end note
+  }
+
+  card "**Characteristics**" as Char2 #Honeydew {
+    + Captures taxonomic relationships
+    + Rewards clinically similar codes
+    + Higher alpha (0.84) = better agreement
+    - Only uses IS-A hierarchy
+    - Misses lateral relationships
+  }
+
+  Rule2 -down-> Ex2
+  Ex2 -down-> Char2
+}
+
+' ============================================================================
+' METHOD 3: SEMANTIC FULL RELATIONS
+' ============================================================================
+
+rectangle "Method 3: Semantic (Full Relations)\nα = 0.8424" #LightGreen {
+
+  card "**Agreement Rule**" as Rule3 #White {
+    label "Distance = Shortest path\nusing **ALL SNOMED relationships**\n\n• IS-A (hierarchy)\n• Finding site (anatomy)\n• Associated morphology\n• Causative agent\n• Clinical course\n• 60+ other types"
+  }
+
+  card "**Example**" as Ex3 #WhiteSmoke {
+    agent "Mapper A: Lung Cancer\n(93880001)" as MA3
+    agent "Mapper B: Lung Cancer\n(93880001)" as MB3
+    agent "Mapper C: Bronchial Cancer\n(126713003)" as MC3
+    agent "Mapper D: Bronchial Cancer\n(126713003)" as MD3
+
+    database "Full Graph" as Graph3 {
+      rectangle "Lung Cancer" as LC3
+      rectangle "Bronchial Cancer" as BC3
+      rectangle "Lung structure" as LS3
+      rectangle "Bronchus" as BR3
+
+      LC3 .right.> LS3 : Finding site
+      BC3 .left.> BR3 : Finding site
+      LS3 -down-> BR3 : Part of
+
+      note bottom of BR3
+        Multiple paths exist:
+        1. IS-A path: 2 hops
+        2. Anatomy path: 3 hops
+        **Choose shortest: 2 hops**
+      end note
+    }
+
+    MA3 -[hidden]-> MB3
+    MB3 -[hidden]-> MC3
+    MC3 -[hidden]-> MD3
+
+    note bottom
+      δ(A,B) = 0/50 = 0.00 (identical)
+      δ(A,C) = 2/50 = **0.04** (related!)
+      δ(A,D) = 2/50 = **0.04** (related!)
+      δ(C,D) = 0/50 = 0.00 (identical)
+
+      **Finds semantic shortcuts**
+      Cross-hierarchy relationships
+    end note
+  }
+
+  card "**Characteristics**" as Char3 #Honeydew {
+    + Captures full semantic network
+    + Best recognizes clinical similarity
+    + **Highest alpha (0.8424)**
+    + Reflects true domain knowledge
+    - Complex to compute
+    - Requires full SNOMED CT
+    - Harder to explain
+  }
+
+  Rule3 -down-> Ex3
+  Ex3 -down-> Char3
+}
+
+' ============================================================================
+' COMPARISON TABLE
+' ============================================================================
+
+note as Comparison
+**Why the progression from 0.76 → 0.84 → 0.84?**
+
+| **Aspect**              | **Standard** | **IS-A Only** | **Full Relations** |
+|-------------------------|--------------|---------------|--------------------|
+| Identical codes         | δ = 0        | δ = 0         | δ = 0              |
+| Parent-child (1 hop)    | δ = 1 ✗      | δ = 0.02 ✓    | δ = 0.02 ✓         |
+| Same branch (2 hops)    | δ = 1 ✗      | δ = 0.04 ✓    | δ = 0.04 ✓         |
+| Cross-branch, related   | δ = 1 ✗      | δ = 0.40 ~    | δ = 0.08 ✓✓        |
+| Completely unrelated    | δ = 1 ✓      | δ = 1.00 ✓    | δ = 0.60 ✓         |
+
+**Key insight:**
+Mappers often choose codes at **different specificity levels**
+(e.g., "Lung Cancer" vs "Small Cell Lung Cancer").
+
+Standard α treats this as **complete disagreement**.
+Semantic α recognizes this as **minor refinement**.
+
+→ **True inter-rater agreement is higher than nominal metrics suggest!**
+end note
+
+@enduml

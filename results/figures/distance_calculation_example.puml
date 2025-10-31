@@ -1,0 +1,186 @@
+@startuml Distance Calculation: IS-A vs Full Relations
+
+!theme plain
+skinparam backgroundColor white
+skinparam defaultFontSize 12
+skinparam defaultFontName Arial
+
+title Distance Calculation Example\nMapper Disagreement: "Lung Cancer" vs "Bronchial Cancer"
+
+' ============================================================================
+' SCENARIO SETUP
+' ============================================================================
+
+rectangle "Mapper Agreement Scenario" #WhiteSmoke {
+  card "Mapper A chooses:" as MA #LightBlue
+  card "**Primary malignant\nneoplasm of lung**\n(93880001)" as ConceptA #SkyBlue
+
+  card "Mapper B chooses:" as MB #LightCoral
+  card "**Malignant tumor\nof bronchus**\n(126713003)" as ConceptB #Salmon
+
+  MA -down-> ConceptA
+  MB -down-> ConceptB
+
+  note right of ConceptA
+    How do we measure
+    the **semantic distance**
+    between these codes?
+  end note
+}
+
+' ============================================================================
+' IS-A GRAPH CALCULATION
+' ============================================================================
+
+package "Method 1: IS-A Only Graph" #LightYellow {
+
+  rectangle "Malignant neoplasm\nof respiratory system" as Root1 #Orange
+
+  rectangle "Primary malignant\nneoplasm of lung\n(93880001)" as A1 #SkyBlue
+
+  rectangle "Malignant tumor\nof bronchus\n(126713003)" as B1 #Salmon
+
+  Root1 -down-> A1 : IS-A
+  Root1 -down-> B1 : IS-A
+
+  note bottom of Root1
+    **Distance = Path Length**
+
+    Step 1: Find Lowest Common Ancestor (LCA)
+    → "Malignant neoplasm of respiratory system"
+
+    Step 2: Count hops
+    - Concept A → LCA = 1 hop (up)
+    - LCA → Concept B = 1 hop (down)
+    - **Total distance = 2 hops**
+
+    **Krippendorff penalty:**
+    δ(A,B) = 2 / 50 = 0.04
+    (normalized by max SNOMED depth ~50)
+  end note
+}
+
+' ============================================================================
+' FULL RELATIONS GRAPH CALCULATION
+' ============================================================================
+
+package "Method 2: Full Relations Graph" #LightGreen {
+
+  rectangle "Malignant neoplasm\nof respiratory system" as Root2 #Orange
+
+  rectangle "Primary malignant\nneoplasm of lung\n(93880001)" as A2 #SkyBlue
+
+  rectangle "Malignant tumor\nof bronchus\n(126713003)" as B2 #Salmon
+
+  rectangle "Lung structure\n(39607008)" as Lung #Cyan
+
+  rectangle "Bronchial structure\n(955009)" as Bronchus #Turquoise
+
+  Root2 -down-> A2 : IS-A
+  Root2 -down-> B2 : IS-A
+
+  A2 .right.> Lung : Finding site
+  B2 .left.> Bronchus : Finding site
+  Lung -down-> Bronchus : Part of
+
+  note bottom of Bronchus
+    **Distance = Shortest Path (any relationship)**
+
+    Alternative path found:
+    - A → "Lung structure" (Finding site)
+    - "Lung structure" → "Bronchial structure" (Part of)
+    - "Bronchial structure" → B (Finding site, reverse)
+    - **Total distance = 3 hops BUT semantically closer**
+
+    Actually, also check IS-A path:
+    - A → LCA → B = 2 hops ✓ (shortest)
+
+    **Krippendorff penalty:**
+    δ(A,B) = 2 / 50 = 0.04
+
+    **But for truly divergent codes, full graph helps!**
+  end note
+}
+
+' ============================================================================
+' BETTER EXAMPLE: DIVERGENT CODES
+' ============================================================================
+
+package "Better Example: Divergent Codes" #LightPink {
+
+  card "Mapper C chooses:" as MC #Yellow
+  card "**Lung Cancer**\n(93880001)" as C1 #Gold
+
+  card "Mapper D chooses:" as MD #Pink
+  card "**Radiation Therapy**\n(108290001)" as C2 #HotPink
+
+  MC -down-> C1
+  MD -down-> C2
+
+  note right of C1
+    **Different clinical domains!**
+    - Disease vs Procedure
+    - Very distant in IS-A tree
+  end note
+
+  rectangle "IS-A Path" #LightYellow {
+    rectangle "SNOMED CT\nRoot Concept" as RootDiv1 #Gray
+    RootDiv1 -down-> "Clinical Finding" : IS-A
+    RootDiv1 -down-> "Procedure" : IS-A
+    "Clinical Finding" -down-> "Lung Cancer" : ...many hops
+    "Procedure" -down-> "Radiation Therapy" : ...many hops
+
+    note bottom
+      **IS-A distance: ~20-30 hops**
+      (up to root, down other branch)
+      Very large disagreement penalty
+    end note
+  }
+
+  rectangle "Full Graph Path" #LightGreen {
+    "Lung Cancer" as LC
+    "Radiation Therapy" as RT
+    "Lung structure" as LS2
+
+    LC .right.> LS2 : Finding site
+    RT .left.> LS2 : Procedure site
+
+    note bottom
+      **Full graph distance: ~6 hops**
+      (via "Lung structure" shortcut)
+
+      Still penalized, but recognizes
+      they're **related by anatomy**
+
+      → More nuanced disagreement measure
+    end note
+  }
+}
+
+' ============================================================================
+' SUMMARY
+' ============================================================================
+
+note as Summary
+**Key Differences:**
+
+**IS-A Only (α = 0.8380):**
+✓ Simple, interpretable
+✓ Pure hierarchy
+✗ Misses semantic relationships
+✗ Overpenalizes related concepts from different branches
+
+**Full Relations (α = 0.8424):**
+✓ Captures true semantic similarity
+✓ Recognizes anatomical/causal relationships
+✓ Better for cross-branch comparisons
+✗ More complex to explain
+✗ Requires full SNOMED relationship table
+
+**Why Full α is higher:**
+Mapper disagreements are often **semantically related**
+(e.g., different specificity levels of same disease).
+Full graph recognizes this → less penalty → higher agreement.
+end note
+
+@enduml

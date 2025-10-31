@@ -50,9 +50,9 @@ def create_alpha_progression_figure():
     """
     print("Creating Figure 1: Alpha Progression...")
 
-    # Data from results
+    # Data from results (krippendorff_summary_20251019_180709.csv)
     methods = ['Standard\n(Nominal)', 'Semantic\n(IS-A only)', 'Semantic\n(Full Relations)']
-    alphas = [0.6680, 0.8121, 0.8494]
+    alphas = [0.7634, 0.8380, 0.8424]
     colors = ['#e74c3c', '#f39c12', '#27ae60']
 
     fig, ax = plt.subplots(figsize=(10, 6))
@@ -138,7 +138,7 @@ def create_module_heatmap():
                              ha="center", va="center", color=text_color,
                              fontsize=8, fontweight='bold')
 
-    ax.set_title("Krippendorff's Alpha by Module and Method\n579 oBDS Concepts, 4 Independent Mappers",
+    ax.set_title("Krippendorff's Alpha by Module and Method\n480 oBDS Items (with 2+ Mappers), 4 Independent Mappers",
                  fontsize=14, fontweight='bold', pad=20)
 
     # Set axis limits to show grid properly
@@ -177,10 +177,18 @@ def create_difficulty_distribution():
     diff_file = sorted(PROJECT_ROOT.glob("results/mapping_difficulty_scores_*.csv"))[-1]
     df = pd.read_csv(diff_file)
 
+    # Load module-level summary
+    module_file = sorted(PROJECT_ROOT.glob("results/module_difficulty_summary_*.csv"))[-1]
+    module_df = pd.read_csv(module_file, index_col=0)
+
+    # Add module labels
+    module_df['label'] = module_df.index.map(MODULE_NAMES_SHORT)
+    module_df = module_df.sort_values('mdi_mean', ascending=False)
+
     # Filter to valid MDI
     valid_mdi = df[df['mdi'].notna()]
 
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5))
+    fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(20, 5))
 
     # Subplot 1: Histogram
     ax1.hist(valid_mdi['mdi'], bins=30, color='steelblue', alpha=0.7, edgecolor='black')
@@ -226,6 +234,36 @@ def create_difficulty_distribution():
     ax2.set_ylabel('Number of Items', fontsize=11, fontweight='bold')
     ax2.set_title('Difficulty Categories', fontsize=12, fontweight='bold')
     ax2.grid(axis='y', alpha=0.3)
+
+    # Subplot 3: Module-level means with error bars
+    # Color by difficulty
+    colors_module = []
+    for mdi in module_df['mdi_mean']:
+        if mdi < 0.1:
+            colors_module.append('#27ae60')
+        elif mdi < 0.3:
+            colors_module.append('#f39c12')
+        else:
+            colors_module.append('#e74c3c')
+
+    y_pos = range(len(module_df))
+    ax3.barh(y_pos, module_df['mdi_mean'], xerr=module_df['mdi_std'],
+             color=colors_module, alpha=0.7, edgecolor='black', linewidth=1,
+             capsize=4, error_kw={'linewidth': 1.5, 'elinewidth': 1.5})
+
+    ax3.set_yticks(y_pos)
+    ax3.set_yticklabels(module_df['label'], fontsize=9)
+    ax3.set_xlabel('Mean MDI ± SD', fontsize=11, fontweight='bold')
+    ax3.set_title('Mean Difficulty by Module\n(with standard deviation)', fontsize=12, fontweight='bold')
+    ax3.grid(axis='x', alpha=0.3)
+    ax3.axvline(x=0.1, color='green', linestyle='--', alpha=0.5, linewidth=1)
+    ax3.axvline(x=0.3, color='orange', linestyle='--', alpha=0.5, linewidth=1)
+
+    # Add sample size annotations
+    for i, (idx, row) in enumerate(module_df.iterrows()):
+        ax3.text(row['mdi_mean'] + row['mdi_std'] + 0.01, i,
+                f"n={int(row['mdi_count'])}",
+                va='center', fontsize=8, style='italic')
 
     plt.tight_layout()
     output_file = OUTPUT_DIR / "fig3_difficulty_distribution.png"
@@ -305,6 +343,7 @@ def create_gap_analysis_figure():
 def create_quality_scatter():
     """
     Create scatter plot showing Quality = Completeness x Agreement.
+    Uses jitter and bubble sizes to show overlapping points.
     """
     print("Creating Figure 5: Quality Score Visualization...")
 
@@ -312,7 +351,10 @@ def create_quality_scatter():
     quality_file = sorted(PROJECT_ROOT.glob("results/item_quality_scores_*.csv"))[-1]
     df = pd.read_csv(quality_file)
 
-    fig, ax = plt.subplots(figsize=(10, 8))
+    # Remove items with no codes (NaN agreement)
+    df_plot = df[df['agreement'].notna()].copy()
+
+    fig, ax = plt.subplots(figsize=(12, 9))
 
     # Color by interpretation
     color_map = {
@@ -326,12 +368,24 @@ def create_quality_scatter():
         'No codes provided': '#7f8c8d'
     }
 
+    # Plot with consistent marker size, using alpha to show density
     for interp in color_map.keys():
-        subset = df[df['interpretation'] == interp]
+        subset = df_plot[df_plot['interpretation'] == interp]
         if len(subset) > 0:
             ax.scatter(subset['completeness'], subset['agreement'],
-                      c=color_map[interp], label=f"{interp} (n={len(subset)})",
-                      alpha=0.6, s=80, edgecolors='black', linewidth=0.5)
+                      c=color_map[interp],
+                      label=f"{interp} (n={len(subset)})",
+                      alpha=0.4, s=150, edgecolors='black', linewidth=0.5)
+
+    # Add text annotations showing counts at each unique position
+    position_counts = df_plot.groupby(['completeness', 'agreement']).size().reset_index(name='count')
+    for _, row in position_counts.iterrows():
+        if row['count'] > 10:  # Only annotate positions with many items
+            ax.text(row['completeness'], row['agreement'],
+                   f"{int(row['count'])}",
+                   fontsize=9, fontweight='bold',
+                   ha='center', va='center',
+                   bbox=dict(boxstyle='round,pad=0.3', facecolor='white', edgecolor='gray', alpha=0.8))
 
     # Add diagonal lines (quality score)
     for q in [0.25, 0.5, 0.75, 1.0]:
@@ -347,13 +401,13 @@ def create_quality_scatter():
                   fontsize=11, fontweight='bold')
     ax.set_ylabel('Agreement (proportion agreeing with most common code)',
                   fontsize=11, fontweight='bold')
-    ax.set_title('Quality = Completeness × Agreement\n579 oBDS Concepts',
+    ax.set_title('Quality = Completeness × Agreement\n519 oBDS Items (counts shown for positions with >10 items)',
                  fontsize=14, fontweight='bold', pad=20)
 
     ax.set_xlim(-0.05, 1.05)
     ax.set_ylim(-0.05, 1.05)
 
-    ax.legend(loc='lower left', fontsize=8, ncol=2)
+    ax.legend(loc='lower left', fontsize=8, ncol=2, framealpha=0.9)
     ax.grid(alpha=0.3)
 
     # Add quadrant labels
@@ -385,6 +439,9 @@ def create_module_difficulty_ranking():
     module_file = sorted(PROJECT_ROOT.glob("results/module_difficulty_summary_*.csv"))[-1]
     df = pd.read_csv(module_file, index_col=0)
 
+    # Add extended labels
+    df['label'] = df.index.map(MODULE_NAMES_SHORT)
+
     # Sort by mean MDI
     df_sorted = df.sort_values('mdi_mean', ascending=True)
 
@@ -400,8 +457,12 @@ def create_module_difficulty_ranking():
         else:
             colors.append('#e74c3c')
 
-    bars = ax.barh(df_sorted.index, df_sorted['mdi_mean'], color=colors,
+    bars = ax.barh(range(len(df_sorted)), df_sorted['mdi_mean'], color=colors,
                    alpha=0.7, edgecolor='black', linewidth=1)
+
+    # Set y-axis labels to extended module names
+    ax.set_yticks(range(len(df_sorted)))
+    ax.set_yticklabels(df_sorted['label'], fontsize=10)
 
     # Add value labels
     for i, (idx, row) in enumerate(df_sorted.iterrows()):
@@ -440,10 +501,17 @@ def main():
 
     create_alpha_progression_figure()
     create_module_heatmap()
-    create_difficulty_distribution()
-    create_gap_analysis_figure()
-    create_quality_scatter()
-    create_module_difficulty_ranking()
+
+    # NOTE: Figures 3-6 disabled due to MDI metric issues:
+    # - High multicollinearity (disagreement r=0.95 with diversity)
+    # - Disagreement alone explains 98.8% of MDI variance
+    # - Error bars exceed means (CV > 100% for many modules)
+    # Keeping only robust Krippendorff Alpha analyses (Figures 1-2)
+
+    # create_difficulty_distribution()
+    # create_gap_analysis_figure()
+    # create_quality_scatter()
+    # create_module_difficulty_ranking()
 
     print("\n" + "=" * 70)
     print("FIGURE CREATION COMPLETE")
@@ -452,10 +520,7 @@ def main():
     print("\nFigures created:")
     print("  1. fig1_alpha_progression.png - Agreement metrics comparison")
     print("  2. fig2_module_heatmap.png - Module-level quality by method")
-    print("  3. fig3_difficulty_distribution.png - MDI distribution")
-    print("  4. fig4_gap_analysis.png - Gap candidates visualization")
-    print("  5. fig5_quality_scatter.png - Completeness vs Agreement")
-    print("  6. fig6_module_ranking.png - Module difficulty ranking")
+    print("\n  [Figures 3-6 disabled - MDI metric has statistical issues]")
 
 
 if __name__ == '__main__':

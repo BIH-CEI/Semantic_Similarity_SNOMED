@@ -29,15 +29,16 @@ FIGURES_DIR = RESULTS_DIR / "figures"
 FIGURES_DIR.mkdir(exist_ok=True)
 
 # Find most recent results files
-krippendorff_files = sorted(RESULTS_DIR.glob("krippendorff_by_module_*.csv"))
+# Use the comprehensive alpha comparison file (has all three methods)
+alpha_comparison_files = sorted(RESULTS_DIR.glob("alpha_comparison_all_methods_*.csv"))
 missing_files = sorted(RESULTS_DIR.glob("missing_values_analysis_*.csv"))
 
-if not krippendorff_files:
-    raise FileNotFoundError("No Krippendorff results found")
+if not alpha_comparison_files:
+    raise FileNotFoundError("No alpha comparison results found")
 if not missing_files:
     raise FileNotFoundError("No missing values analysis found")
 
-KRIPPENDORFF_FILE = krippendorff_files[-1]
+ALPHA_COMPARISON_FILE = alpha_comparison_files[-1]
 MISSING_FILE = missing_files[-1]
 
 # Use shared module reference
@@ -58,20 +59,104 @@ COLORS = {
 # ============================================================================
 
 def plot_alpha_by_module():
-    """Create sorted bar chart of Krippendorff's Alpha by module."""
+    """Create sorted bar chart of Krippendorff's Alpha by module (all three methods)."""
     print("Creating sorted alpha by module chart...")
 
     # Load data
-    df = pd.read_csv(KRIPPENDORFF_FILE)
+    df = pd.read_csv(ALPHA_COMPARISON_FILE)
 
-    # Filter out modules with NaN or zero alpha
+    # Filter out modules with NaN nominal alpha
     df = df[df['alpha_nominal'].notna()]
-    df = df[df['alpha_nominal'] != 0.0]
 
-    # Add German labels
+    # Add module labels
     df['label'] = df['module'].map(MODULE_LABELS)
 
-    # Sort by alpha value
+    # Sort by nominal alpha value (ascending for horizontal bar chart)
+    df = df.sort_values('alpha_nominal', ascending=True)
+
+    # Create figure with grouped horizontal bars
+    fig, ax = plt.subplots(figsize=(12, 10))
+
+    # Bar positioning
+    bar_height = 0.25
+    y_positions = np.arange(len(df))
+
+    # Plot three sets of bars
+    bars1 = ax.barh(y_positions - bar_height, df['alpha_nominal'],
+                    bar_height, label='Standard (Nominal)',
+                    color='#e74c3c', alpha=0.8, edgecolor='black', linewidth=0.5)
+
+    bars2 = ax.barh(y_positions, df['alpha_semantic_isa'],
+                    bar_height, label='Semantic (IS-A only)',
+                    color='#f39c12', alpha=0.8, edgecolor='black', linewidth=0.5)
+
+    bars3 = ax.barh(y_positions + bar_height, df['alpha_semantic_full'],
+                    bar_height, label='Semantic (Full Relations)',
+                    color='#27ae60', alpha=0.8, edgecolor='black', linewidth=0.5)
+
+    # Add value labels on bars (only for values > 0.2 to avoid clutter)
+    for i, row in enumerate(df.itertuples()):
+        # Nominal
+        if row.alpha_nominal > 0.2:
+            ax.text(row.alpha_nominal + 0.01, i - bar_height, f'{row.alpha_nominal:.2f}',
+                   va='center', ha='left', fontsize=7)
+        # IS-A
+        if row.alpha_semantic_isa > 0.2:
+            ax.text(row.alpha_semantic_isa + 0.01, i, f'{row.alpha_semantic_isa:.2f}',
+                   va='center', ha='left', fontsize=7)
+        # Full
+        if row.alpha_semantic_full > 0.2:
+            ax.text(row.alpha_semantic_full + 0.01, i + bar_height, f'{row.alpha_semantic_full:.2f}',
+                   va='center', ha='left', fontsize=7)
+
+    # Set labels
+    ax.set_yticks(y_positions)
+    ax.set_yticklabels(df['label'], fontsize=10)
+    ax.set_xlabel("Krippendorff's Alpha (κ)", fontsize=12, fontweight='bold')
+    ax.set_title("Inter-Rater Reliability by oBDS Module\nAll Three Methods (sorted by Standard α)",
+                 fontsize=14, fontweight='bold', pad=20)
+
+    # Add reference lines
+    ax.axvline(x=0.667, color='gray', linestyle='--', linewidth=1.5, alpha=0.5, label='κ = 0.667 (Tentative)')
+    ax.axvline(x=0.8, color='green', linestyle='--', linewidth=1.5, alpha=0.5, label='κ = 0.800 (Good)')
+
+    # Styling
+    ax.set_xlim(-0.05, 1.05)
+    ax.grid(axis='x', alpha=0.3, linestyle=':')
+    ax.legend(loc='lower right', fontsize=10, framealpha=0.9)
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+
+    # Add overall alphas as text
+    overall_nom = df['alpha_nominal'].mean()
+    overall_isa = df['alpha_semantic_isa'].mean()
+    overall_full = df['alpha_semantic_full'].mean()
+
+    fig.text(0.99, 0.01,
+             f'Overall: Standard={overall_nom:.3f}, IS-A={overall_isa:.3f}, Full={overall_full:.3f}',
+             ha='right', fontsize=9, style='italic', color='gray')
+
+    plt.tight_layout()
+    output_file = FIGURES_DIR / "alpha_by_module_sorted.png"
+    plt.savefig(output_file, dpi=300, bbox_inches='tight')
+    print(f"Saved: {output_file}")
+    plt.close()
+
+
+def plot_alpha_by_module_standard_only():
+    """Create sorted bar chart of Standard Krippendorff's Alpha by module (cleaner version)."""
+    print("Creating standard alpha only by module chart...")
+
+    # Load data
+    df = pd.read_csv(ALPHA_COMPARISON_FILE)
+
+    # Filter out modules with NaN nominal alpha
+    df = df[df['alpha_nominal'].notna()]
+
+    # Add module labels
+    df['label'] = df['module'].map(MODULE_LABELS)
+
+    # Sort by nominal alpha value (ascending for horizontal bar chart)
     df = df.sort_values('alpha_nominal', ascending=True)
 
     # Create figure
@@ -90,20 +175,20 @@ def plot_alpha_by_module():
             colors.append(COLORS['poor'])
 
     # Create horizontal bar chart
-    bars = ax.barh(range(len(df)), df['alpha_nominal'], color=colors, alpha=0.8)
+    bars = ax.barh(range(len(df)), df['alpha_nominal'], color=colors, alpha=0.8, edgecolor='black', linewidth=1)
 
     # Add value labels on bars
     for i, (alpha, n) in enumerate(zip(df['alpha_nominal'], df['n_concepts'])):
         ax.text(alpha + 0.02, i, f'{alpha:.3f}',
                 va='center', ha='left', fontsize=9, fontweight='bold')
-        ax.text(0.01, i, f'(n={n})',
+        ax.text(0.01, i, f'(n={int(n)})',
                 va='center', ha='left', fontsize=7, color='white', fontweight='bold')
 
     # Set labels
     ax.set_yticks(range(len(df)))
     ax.set_yticklabels(df['label'], fontsize=10)
     ax.set_xlabel("Krippendorff's Alpha (κ)", fontsize=11, fontweight='bold')
-    ax.set_title("Inter-Rater Reliability by oBDS Module\n(sorted by κ value)",
+    ax.set_title("Inter-Rater Reliability by oBDS Module\nStandard (Nominal) Alpha (sorted by κ value)",
                  fontsize=13, fontweight='bold', pad=20)
 
     # Add reference lines
@@ -123,7 +208,7 @@ def plot_alpha_by_module():
              ha='right', fontsize=10, style='italic', color='gray')
 
     plt.tight_layout()
-    output_file = FIGURES_DIR / "alpha_by_module_sorted.png"
+    output_file = FIGURES_DIR / "alpha_by_module_sorted_standard_only.png"
     plt.savefig(output_file, dpi=300, bbox_inches='tight')
     print(f"Saved: {output_file}")
     plt.close()
@@ -258,12 +343,13 @@ def main():
     print("=" * 70)
     print("Generating Visualizations")
     print("=" * 70)
-    print(f"\nKrippendorff results: {KRIPPENDORFF_FILE.name}")
+    print(f"\nAlpha comparison: {ALPHA_COMPARISON_FILE.name}")
     print(f"Missing values: {MISSING_FILE.name}")
     print(f"Output directory: {FIGURES_DIR}")
 
     # Generate visualizations
     plot_alpha_by_module()
+    plot_alpha_by_module_standard_only()
     plot_mapper_coverage()
     plot_missing_patterns()
 

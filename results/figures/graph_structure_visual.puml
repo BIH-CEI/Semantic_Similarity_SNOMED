@@ -1,0 +1,203 @@
+@startuml SNOMED CT Graph Structures
+
+!theme plain
+skinparam backgroundColor white
+skinparam defaultFontSize 12
+skinparam defaultFontName Arial
+skinparam linetype ortho
+
+title SNOMED CT Graph Structures: IS-A vs Full Relations
+
+' ============================================================================
+' IS-A ONLY GRAPH (TREE STRUCTURE)
+' ============================================================================
+
+package "IS-A Only Graph (Tree Structure)" #LightYellow {
+
+  rectangle "Root Concept\n(138875005)" as Root1 #Gray
+
+  rectangle "Clinical Finding\n(404684003)" as CF1 #LightBlue
+
+  rectangle "Procedure\n(71388002)" as Proc1 #LightGreen
+
+  rectangle "Body Structure\n(123037004)" as BS1 #Cyan
+
+  rectangle "Disease\n(64572001)" as Dis1 #SkyBlue
+
+  rectangle "Surgical Procedure\n(387713003)" as SP1 #PaleGreen
+
+  rectangle "Anatomical Structure\n(91723000)" as AS1 #Turquoise
+
+  rectangle "Neoplasm\n(108369006)" as Neo1 #Yellow
+
+  rectangle "Lung Cancer\n(93880001)" as LC1 #Orange
+
+  rectangle "Bronchoscopy\n(10847001)" as Bronc1 #Green
+
+  rectangle "Lung Structure\n(39607008)" as Lung1 #LightCyan
+
+  Root1 --> CF1 : IS-A
+  Root1 --> Proc1 : IS-A
+  Root1 --> BS1 : IS-A
+
+  CF1 --> Dis1 : IS-A
+  Proc1 --> SP1 : IS-A
+  BS1 --> AS1 : IS-A
+
+  Dis1 --> Neo1 : IS-A
+  Neo1 --> LC1 : IS-A
+
+  SP1 --> Bronc1 : IS-A
+  AS1 --> Lung1 : IS-A
+
+  note bottom of Root1
+    **Characteristics:**
+    • Strict hierarchy (tree)
+    • Only parent-child links
+    • One relationship type: IS-A (116680003)
+
+    **Distance calculation:**
+    • Must go UP to common ancestor
+    • Then DOWN to target
+    • Example: Lung Cancer → Lung Structure
+      = LC → Neo → Dis → CF → Root → BS → AS → Lung
+      = **~8 hops** (distant!)
+  end note
+
+  note right of LC1
+    **Problem:**
+    "Lung Cancer" and "Lung Structure"
+    are **semantically related**
+    but appear **very distant**
+    in the IS-A tree
+  end note
+}
+
+' ============================================================================
+' FULL RELATIONS GRAPH (NETWORK STRUCTURE)
+' ============================================================================
+
+package "Full Relations Graph (Network Structure)" #LightGreen {
+
+  rectangle "Root Concept\n(138875005)" as Root2 #Gray
+
+  rectangle "Clinical Finding\n(404684003)" as CF2 #LightBlue
+
+  rectangle "Procedure\n(71388002)" as Proc2 #LightGreen
+
+  rectangle "Body Structure\n(123037004)" as BS2 #Cyan
+
+  rectangle "Disease\n(64572001)" as Dis2 #SkyBlue
+
+  rectangle "Surgical Procedure\n(387713003)" as SP2 #PaleGreen
+
+  rectangle "Anatomical Structure\n(91723000)" as AS2 #Turquoise
+
+  rectangle "Neoplasm\n(108369006)" as Neo2 #Yellow
+
+  rectangle "Lung Cancer\n(93880001)" as LC2 #Orange
+
+  rectangle "Bronchoscopy\n(10847001)" as Bronc2 #Green
+
+  rectangle "Lung Structure\n(39607008)" as Lung2 #LightCyan
+
+  ' IS-A relationships (solid lines)
+  Root2 --> CF2 : IS-A
+  Root2 --> Proc2 : IS-A
+  Root2 --> BS2 : IS-A
+
+  CF2 --> Dis2 : IS-A
+  Proc2 --> SP2 : IS-A
+  BS2 --> AS2 : IS-A
+
+  Dis2 --> Neo2 : IS-A
+  Neo2 --> LC2 : IS-A
+
+  SP2 --> Bronc2 : IS-A
+  AS2 --> Lung2 : IS-A
+
+  ' ADDITIONAL relationships (dotted lines) - THIS IS THE KEY DIFFERENCE!
+  LC2 .right.> Lung2 : <color:Red>**Finding site**</color>
+  Bronc2 .left.> Lung2 : <color:Blue>**Procedure site**</color>
+  Neo2 .up.> "Malignant Process" : <color:Purple>**Morphology**</color>
+
+  note bottom of Root2
+    **Characteristics:**
+    • **Network** structure (not tree)
+    • Multiple relationship types
+    • Shortcuts between branches
+
+    **Additional relationships:**
+    • Finding site (363698007)
+    • Procedure site (363704007)
+    • Associated morphology (116676008)
+    • Causative agent (246075003)
+    • Clinical course (263502005)
+    • ... 60+ more types
+
+    **Distance calculation:**
+    • Can use **any relationship**
+    • Find shortest path across network
+    • Example: Lung Cancer → Lung Structure
+      = LC → Lung (via "Finding site")
+      = **1 hop** (close!)
+  end note
+
+  note right of LC2
+    **Solution:**
+    "Lung Cancer" and "Lung Structure"
+    are **directly linked** via
+    "Finding site" relationship
+
+    Much closer in full graph!
+  end note
+}
+
+' ============================================================================
+' SIDE-BY-SIDE EXAMPLE
+' ============================================================================
+
+note as Example
+**Concrete Example: Measuring Distance**
+
+**Scenario:** Mapper A chose "Lung Cancer" (93880001)
+              Mapper B chose "Bronchial Cancer" (126713003)
+
+┌─────────────────────────────────────────────────────────────┐
+│ IS-A Only Graph:                                            │
+│                                                             │
+│   Lung Cancer ──IS-A──▶ Malignant Neoplasm                │
+│                              ▲                              │
+│                              IS-A                           │
+│                              │                              │
+│   Bronchial Cancer ──IS-A───┘                              │
+│                                                             │
+│   Distance = 2 hops                                         │
+│   δ(A,B) = 2/50 = 0.04                                     │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│ Full Relations Graph:                                       │
+│                                                             │
+│   Lung Cancer ──Finding site──▶ Lung Structure             │
+│                                      │                      │
+│                                    Part of                  │
+│                                      ▼                      │
+│   Bronchial Cancer ──Finding site──▶ Bronchial Structure   │
+│                                                             │
+│   Alternative path = 3 hops (via anatomy)                   │
+│   IS-A path = 2 hops ✓ (still shortest)                    │
+│   δ(A,B) = 2/50 = 0.04                                     │
+│                                                             │
+│   BUT: If codes were from different clinical domains,       │
+│   full graph finds semantic shortcuts IS-A cannot!          │
+└─────────────────────────────────────────────────────────────┘
+
+**Impact on Krippendorff's Alpha:**
+- IS-A: α = 0.8380 (good agreement, hierarchy-aware)
+- Full: α = 0.8424 (slightly better, finds more relationships)
+- Difference is small because most mapper disagreements
+  are within same clinical hierarchy
+end note
+
+@enduml
